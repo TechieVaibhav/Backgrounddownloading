@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="695-zw-ILa">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BackgroundDownload" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MZZ-ez-h8n">
+                                <rect key="frame" x="146.66666666666666" y="327.33333333333331" width="100" height="197.33333333333331"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zri-A2-YAa">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Download"/>
+                                        <connections>
+                                            <action selector="downloadFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eip-kB-EWJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-hi-YDE">
+                                        <rect key="frame" x="14.666666666666686" y="54.333333333333371" width="70.333333333333329" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uv1-pG-Mxm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxV-1l-To8">
+                                        <rect key="frame" x="7.3333333333333428" y="108.66666666666669" width="85.333333333333329" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Resume"/>
+                                        <connections>
+                                            <action selector="resumeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xy6-WQ-31s"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InM-NZ-TpH">
+                                        <rect key="frame" x="15.333333333333343" y="163" width="69" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="OPEN" titleAlignment="center"/>
+                                        <connections>
+                                            <segue destination="amH-A9-Arc" kind="show" id="VGW-y9-Wz7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MZZ-ez-h8n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OK7-YX-Suh"/>
+                            <constraint firstItem="MZZ-ez-h8n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SHH-2F-7ML"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="MCA-DN-14K"/>
+                    <connections>
+                        <outlet property="btnDownload" destination="Zri-A2-YAa" id="gh4-wW-k8Y"/>
+                        <outlet property="btnPause" destination="NsD-hi-YDE" id="mht-JU-77F"/>
+                        <outlet property="btnResume" destination="ZxV-1l-To8" id="uZu-SF-egg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947.32824427480909" y="3.5211267605633805"/>
+        </scene>
+        <!--OpenPDF View Controller-->
+        <scene sceneID="NZG-jb-5Wj">
+            <objects>
+                <viewController id="amH-A9-Arc" customClass="OpenPDFViewController" customModule="BackgroundDownload" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sNB-x4-ISP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbx-aM-Kor">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yY0-Fk-2xD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rbx-aM-Kor" firstAttribute="top" secondItem="yY0-Fk-2xD" secondAttribute="top" id="Dr3-O2-2vf"/>
+                            <constraint firstItem="yY0-Fk-2xD" firstAttribute="bottom" secondItem="Rbx-aM-Kor" secondAttribute="bottom" id="eNq-tm-Nbr"/>
+                            <constraint firstItem="Rbx-aM-Kor" firstAttribute="leading" secondItem="yY0-Fk-2xD" secondAttribute="leading" id="ouI-l0-1cD"/>
+                            <constraint firstItem="yY0-Fk-2xD" firstAttribute="trailing" secondItem="Rbx-aM-Kor" secondAttribute="trailing" id="yPo-0M-Ba7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="zmy-d0-t99"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUK-cL-GP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718.3206106870227" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jbe-cK-11p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="695-zw-ILa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="OMb-Tc-RIq">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.41913456710000002" green="0.67843148139999998" blue="0.076706923070000002" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ftm-M7-ucD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z95-NP-Lu6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
